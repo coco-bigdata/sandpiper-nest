@@ -1,0 +1,73 @@
+mvn package
+[ERROR] Failed to execute goal on project admin: Could not resolve dependencies for project com.guoliang.cn:admin:jar:2.1.2: The following artifacts could not be resolved: com.oracle:ojdbc6:jar:11.2.0.3, com.microsoft.sqlserver:sqljdbc4:jar:4.0: Failure to find com.oracle:ojdbc6:jar:11.2.0.3 in https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :admin
+
+[ERROR] Failed to execute goal on project admin: Could not resolve dependencies for project com.guoliang.cn:admin:jar:2.1.2: Failure to find com.microsoft.sqlserver:sqljdbc4:jar:4.0 in https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :admin
+
+flinkx
+[ERROR] Failed to execute goal com.diffplug.spotless:spotless-maven-plugin:2.4.2:check (spotless-check) on project flinkx-parent: The plugin com.diffplug.spotless:spotless-maven-plugin:2.4.2 requires Maven version 3.1.0 -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginIncompatibleException
+
+[ERROR] Failed to execute goal on project flinkx-connector-kafka: Could not resolve dependencies for project com.dtstack.flinkx:flinkx-connector-kafka:jar:1.12-SNAPSHOT: Could not transfer artifact com.pingcap.ticdc.cdc:ticdc-decoder:jar:5.2.0-SNAPSHOT from/to dtstack-github (https://github.com/dtstack/maven-repository/raw/master/): transfer failed for https://github.com/dtstack/maven-repository/raw/master/com/pingcap/ticdc/cdc/ticdc-decoder/5.2.0-SNAPSHOT/ticdc-decoder-5.2.0-SNAPSHOT.jar, proxy: ProxyInfo{host='10.50.19.30', userName='null', port=8888, type='https', nonProxyHosts='null'}: Remote host terminated the handshake: SSL peer shut down incorrectly -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :flinkx-connector-kafka
+
+[WARNING] The POM for com.pingcap.ticdc.cdc:ticdc-decoder:jar:5.2.0-SNAPSHOT is missing, no dependency information available
+Downloading from dtstack-github: https://github.com/dtstack/maven-repository/raw/master/com/pingcap/ticdc/cdc/ticdc-decoder/5.2.0-SNAPSHOT/ticdc-decoder-5.2.0-SNAPSHOT.jar
+
+
+java -cp /home/flinkx/lib/flinkx-clients-master.jar com.dtstack.flinkx.client.Launcher
+Exception in thread "main" java.lang.NullPointerException
+        at java.util.Hashtable.put(Hashtable.java:460)
+        at java.util.Properties.setProperty(Properties.java:166)
+        at java.lang.System.setProperty(System.java:798)
+        at com.dtstack.flinkx.client.Launcher.findDefaultFlinkxDistDir(Launcher.java:190)
+        at com.dtstack.flinkx.client.Launcher.findDefaultConfigDir(Launcher.java:130)
+        at com.dtstack.flinkx.client.Launcher.main(Launcher.java:66)
+
+
+./bin/start-all.sh
+flinkx-admin starting ...
+2022-01-18 18:56:13.733 [INFO] (14933) load environment variables
+2022-01-18 18:56:14.267 [INFO] (14933) java
+2022-01-18 18:56:14.270 [INFO] (14933) Waiting FLINKX-ADMIN to start complete ...
+2022-01-18 18:56:14.458 [INFO] (14933) FLINKX-ADMIN start success
+flinkx-executor starting ...
+2022-01-18 18:56:14.471 [INFO] (15216) load environment variables
+2022-01-18 18:56:14.868 [INFO] (15216) java
+2022-01-18 18:56:14.871 [INFO] (15216) Waiting FLINKX-EXEXUTOR to start complete ...
+2022-01-18 18:56:15.048 [INFO] (15216) FLINKX-EXEXUTOR start success
+
+tail -f packages/admin/bin/console.out
+Error: Could not find or load main class com.sandpiper.admin.FlinkxAdminApplication
+
+2022-01-18 19:02:19.213 [INFO] (28005) FLINKX-ADMIN start success

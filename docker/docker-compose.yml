@@ -1,0 +1,39 @@
+version: '3'
+services:
+  sandpiper-mysql80:
+    image: mysql:8.0
+    container_name: sandpiper-mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - sandpiper-network
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./db/conf.d:/etc/mysql/conf.d
+      - ./db/data:/var/lib/mysql
+      - ./db/init-sql:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+  sandpiper:
+    build:
+      context: sandpiper-fe
+      dockerfile: Dockerfile
+    container_name: sandpiper-fe
+    ports:
+      - "8080:8080"
+    networks:
+      - sandpiper-network
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /home/sandpiper/data:/home/sandpiper/data
+    depends_on:
+      - sandpiper-mysql80
+    restart: always
+
+networks:
+  sandpiper-network:
+    external: true
